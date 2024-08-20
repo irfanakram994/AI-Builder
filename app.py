@@ -1,11 +1,14 @@
+import os
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import google.generativeai as genai
 
-# Constants for the API
-GEMINI_API_KEY = "AIzaSyCGsYczxeg0cjvLvkcQ5W-MLdN7gPx36bw"
+# Retrieve the API key from environment variables
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+
+# Configure the API with the key
 genai.configure(api_key=GEMINI_API_KEY)
 
 # Function to query the Gemini API
